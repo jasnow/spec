@@ -6,7 +6,6 @@ jobs:
       matrix:
         os: [ 'ubuntu', 'windows' ]
         ruby: [ '2.4.x', '2.5.x', '2.6.x' ]
-    name: Run specs on Ruby ${{ matrix.ruby }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}-latest
     steps:
     - uses: actions/checkout@master
