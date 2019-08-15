@@ -43,6 +43,11 @@ describe "The DATA constant" do
   end
 
   it "rewinds to the head of the main script" do
-    ruby_exe(fixture(__FILE__, "data5.rb")).chomp.should == "DATA.rewind"
+    s = ruby_exe(fixture(__FILE__, "data5.rb"))
+    puts
+    p s
+    p $/
+    puts
+    s.chomp.should == "DATA.rewind"
   end
 end
