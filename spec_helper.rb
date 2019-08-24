@@ -1,7 +1,10 @@
 use_realpath = File.respond_to?(:realpath)
 root = File.dirname(__FILE__)
 dir = "fixtures/code"
-CODE_LOADING_DIR = use_realpath ? File.realpath(dir, root) : File.expand_path(dir, root)
+
+unless defined?(CODE_LOADING_DIR)
+  CODE_LOADING_DIR = use_realpath ? File.realpath(dir, root) : File.expand_path(dir, root)
+end
 
 # Enable Thread.report_on_exception by default to catch thread errors earlier
 if Thread.respond_to? :report_on_exception=
